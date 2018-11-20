@@ -13,6 +13,8 @@ namespace EbusSoft
         public override void PreInitialize()
         {
             Configuration.Authorization.Providers.Add<EbusSoftAuthorizationProvider>();
+            //Adding custom AutoMapper configuration
+            Configuration.Modules.AbpAutoMapper().Configurators.Add(CustomDtoMapper.CreateMappings);
         }
 
         public override void Initialize()

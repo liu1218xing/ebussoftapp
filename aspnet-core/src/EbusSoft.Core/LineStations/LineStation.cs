@@ -11,8 +11,8 @@ namespace EbusSoft.LineStations
     public class LineStation : FullAuditedEntity
     {
         public int LineId { get; set; }
-        public ICollection<Line> Lines { get; set; }
-        public int StationIdG { get; set; }
-        public ICollection<Station> Stations { get; set; }
+        public Line Line { get; set; }
+        public int StationId { get; set; }
+        public Station Station { get; set; }
     }
 }

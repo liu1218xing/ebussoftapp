@@ -6,7 +6,7 @@ using System.Text;
 
 namespace EbusSoft.Provinces
 {
-    public class Province : FullAuditedEntity
+    public class Province : FullAuditedEntity<long>
     {
         
         public string Code { get; set; }
