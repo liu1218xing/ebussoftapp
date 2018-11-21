@@ -7,7 +7,7 @@ using System.Text;
 
 namespace EbusSoft.Cities
 {
-    public class City: FullAuditedEntity
+    public class City: FullAuditedEntity<long>
     {
         public string Code { get; set; }
         public string Name { get; set; }

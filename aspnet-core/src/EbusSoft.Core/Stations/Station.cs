@@ -8,7 +8,7 @@ using System.Text;
 
 namespace EbusSoft.Stations
 {
-    public class Station: FullAuditedEntity
+    public class Station: FullAuditedEntity<long>
     {
         public const int MaxDescriptionLength = 5000;
 
@@ -19,7 +19,7 @@ namespace EbusSoft.Stations
         [StringLength(MaxDescriptionLength)]
         public string Description { get; set; }
         public ICollection<LineStation> LineStations { get; set; }
-        public int CityId { get; set; }
+        public long CityId { get; set; }
         public City City { get; set; }
     }
 }

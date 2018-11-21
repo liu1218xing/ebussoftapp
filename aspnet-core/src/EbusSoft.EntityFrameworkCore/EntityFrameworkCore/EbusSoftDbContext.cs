@@ -8,6 +8,7 @@ using EbusSoft.Stations;
 using EbusSoft.LineStations;
 using EbusSoft.Provinces;
 using EbusSoft.Cities;
+using EbusSoft.Base.BusCompanies;
 
 namespace EbusSoft.EntityFrameworkCore
 {
@@ -19,6 +20,7 @@ namespace EbusSoft.EntityFrameworkCore
         public virtual DbSet<LineStation> LineStations { get; set; }
         public virtual DbSet<Province> Provinces { get; set; }
         public virtual DbSet<City> Cities { get; set; }
+        public DbSet<BusCompany> BusCompanies {get;set;}
         public EbusSoftDbContext(DbContextOptions<EbusSoftDbContext> options)
             : base(options)
         {
@@ -27,14 +29,14 @@ namespace EbusSoft.EntityFrameworkCore
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {
             base.OnModelCreating(modelBuilder);
-            modelBuilder.Entity<LineStation>().HasOne(x => x.Line).WithMany(x => x.LineStations)
-                .HasForeignKey(x => x.LineId);
-            modelBuilder.Entity<LineStation>().HasOne(x => x.Station).WithMany(x => x.LineStations)
-                .HasForeignKey(x => x.StationId);
-            modelBuilder.Entity<Station>().HasOne(x => x.City).WithMany(x => x.Stations)
-                .HasForeignKey(x => x.CityId);
-            modelBuilder.Entity<City>().HasOne(x => x.Province).WithMany(x => x.Cities)
-                .HasForeignKey(x => x.PrivinceId);
+            //modelBuilder.Entity<LineStation>().HasOne(x => x.Line).WithMany(x => x.LineStations)
+            //    .HasForeignKey(x => x.LineId);
+            //modelBuilder.Entity<LineStation>().HasOne(x => x.Station).WithMany(x => x.LineStations)
+            //    .HasForeignKey(x => x.StationId);
+            //modelBuilder.Entity<Station>().HasOne(x => x.City).WithMany(x => x.Stations)
+            //    .HasForeignKey(x => x.CityId);
+            //modelBuilder.Entity<City>().HasOne(x => x.Province).WithMany(x => x.Cities)
+            //    .HasForeignKey(x => x.PrivinceId);
         }
     }
 }

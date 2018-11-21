@@ -8,11 +8,11 @@ using System.Text;
 
 namespace EbusSoft.LineStations
 {
-    public class LineStation : FullAuditedEntity
+    public class LineStation : FullAuditedEntity<long>
     {
-        public int LineId { get; set; }
+        public long LineId { get; set; }
         public Line Line { get; set; }
-        public int StationId { get; set; }
+        public long StationId { get; set; }
         public Station Station { get; set; }
     }
 }

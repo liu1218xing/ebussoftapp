@@ -36,12 +36,15 @@ namespace EbusSoft.Provinces
 
         private  async Task UpdateProvinceAsync(CreateOrUpdateProvinceInput input)
         {
-            if (!input.Province.Id.HasValue)
-            {
+           
                 var entity = await _provinceRepository.GetAsync(input.Province.Id.Value);
+                //var updatingProvince = ObjectMapper.Map<Province>(input.Province);
+
+                ObjectMapper.Map(input.Province, entity);
+                //var updatingProvince = ObjectMapper.Map<Province>(input.Province);
                 await _provinceRepository.UpdateAsync(entity);
-            }
-            //throw new NotImplementedException();
+            
+           
         }
 
         private async Task CreateProvinceAsync(CreateOrUpdateProvinceInput input)

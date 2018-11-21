@@ -1,4 +1,6 @@
 ﻿using AutoMapper;
+using EbusSoft.Base.BusCompanies;
+using EbusSoft.Base.BusCompanies.Dto;
 using EbusSoft.Provinces;
 using EbusSoft.Provinces.Dto;
 using System;
@@ -15,6 +17,10 @@ namespace EbusSoft
             
             configuration.CreateMap<Province, ProvinceListDto>();
             configuration.CreateMap<ProvinceEditDto, Province>().ReverseMap();
+
+            configuration.CreateMap<BusCompanyEditDto, BusCompany>().ReverseMap();
+            //configuration.CreateMap<ProvinceEditDto, Province>().ReverseMap();
+
             //Role
             //configuration.CreateMap<RoleEditDto, Role>().ReverseMap();
             //configuration.CreateMap<Role, RoleListDto>();

@@ -6,7 +6,7 @@ using System.Text;
 
 namespace EbusSoft.Lines
 {
-    public class Line: FullAuditedEntity
+    public class Line: FullAuditedEntity<long>
     {
         public string Code { get; set; }
         public string Name { get; set; }
